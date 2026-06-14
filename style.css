@@ -1,0 +1,198 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: white;
+  font-weight: 500;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle, #251041 0%, #080314 100%);
+  color: rgb(219, 30, 30);
+  display: flex;
+  flex-direction: column;
+}
+
+.header-mercado {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  gap: 20px;
+  background-image: linear-gradient(to bottom,  rgb(12, 12, 12),rgb(43, 43, 43));
+  border-bottom: 2px solid rgb(111, 2, 2);
+
+  position: sticky;    /* Le dice que se vuelva pegajoso */
+  top: 0;              /* Se pega justo al ras del techo (0 píxeles de arriba) */
+  z-index: 100;        /* Funciona como una capa; asegura que el header flote POR ENCIMA de las fotos de los juegos y no se meta abajo */
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit; /* "inherit" significa que hereda el color rojo que ya le diste al h1 o al body */
+  text-align: left;
+}
+
+.navegacion a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  
+}
+
+.navegacion a:hover {
+  color: rgb(163, 5, 163);
+}
+
+.navegacion {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.buscador-header{
+  display: flex;
+  align-items: center;
+}
+
+.buscador-header input {
+  padding: 6px 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(235, 227, 227, 0.2);
+  border-radius: 6px 0 0 6px;
+  color: white;
+  font-size: 12px;
+  outline: none;
+  width: 150px; /* Un ancho prudente para que no tape todo */
+  transition: all 0.3s ease;
+}
+
+/* Efecto visual: cuando hacés clic, la barra se estira un poquito sola */
+.buscador-header input:focus {
+  border-color: rgb(219, 30, 30);
+  width: 180px; 
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.buscador-header button {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(235, 227, 227, 0.2);
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 12px;
+  transition: background 0.3s;
+  font-size: 500;
+}
+
+.buscador-header button:hover {
+  background-color: rgb(219, 30, 30);
+}
+
+@media (max-width: 300px) {
+  .navegacion {
+    flex-direction: column;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 20px;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  background-image: linear-gradient(to top,  rgb(12, 12, 12) ,rgb(43, 43, 43));
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: rgb(163, 5, 163);
+}
+
+.contenido-mercado {
+  flex: 1;
+}
+
+.contenido-mercado p {
+  font-weight: 500;
+}
+
+#catalogo {
+  font-size: 30px;
+}
+
+@media (max-width: 450px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contenido-mercado {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .navegacion {
+    flex-direction: column;
+    gap: 10px; /* Menos espacio entre filas en celu */
+  }
+  
+  .buscador-header {
+    margin-left: 0;
+    margin-top: 10px; /* Separa el buscador hacia abajo cuando se apilen */
+  }
+}
+
+
+.contenedor-juego {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tarjeta-juego {
+  background-image: linear-gradient(to bottom,  rgb(12, 12, 12) ,rgb(43, 43, 43));
+  border: 1px solid rgba(235, 227, 227, 0.064);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: left;
+  flex: 1 1 22%; /* CLAVE: Al medir un 22%, entran exactamente 4 en el 100% del ancho
+  y sobra un cachito para los espacios (gap) */
+  min-width: 220px; /* Le ponemos un ancho mínimo para que cuando la pantalla se achique,
+  el juego diga "che, ya no quepo en 22%", y salte abajo solo */
+}
+
+.imagen-juego {
+  width: 100%; /* Se adapta al ancho de la tarjeta */
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+
+
